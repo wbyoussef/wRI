@@ -1,0 +1,5 @@
+export FILE_CONF=/auto/common/zebu/CONFIG.V7_1_X/reao/config/zse_configuration
+export ZEBU_SYSTEM_DIR=/auto/common/zebu/CONFIG.V7_1_X/reao
+export ZEBU_ROOT=/auto/common/zebu/V7_1_X
+export REMOTECMD="qrsh -verbose -l sy='RHEL5*'"
+export REMOTESYN="qrsh -verbose -l sy='RHEL5*'"

@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/copy.png</file>
+        <file>images/cut.png</file>
+        <file>images/new.png</file>
+        <file>images/open.png</file>
+        <file>images/paste.png</file>
+        <file>images/save.png</file>
+        <file>images/settings1.png</file>
+        <file>images/tool_belt_256.png</file>
+        <file>ressources/run.params</file>
+        <file>ressources/setup_compil.bash</file>
+        <file>ressources/setup_run.bash</file>
+        <file>ressources/emul_qa.bash</file>
+        <file>ressources/qa_desk.png</file>
+        <file>images/apply.png</file>
+        <file>images/edit_clear_list.png</file>
+        <file>images/media_playlist_refresh.png</file>
+        <file>images/run_build_file.png</file>
+        <file>images/system_run.png</file>
+        <file>images/up.png</file>
+        <file>images/view_close.png</file>
+        <file>images/viewmag-.png</file>
+        <file>images/viewmag+.png</file>
+        <file>images/view_tree.png</file>
+        <file>images/wheelbarrow_256.png</file>
+        <file>images/vcs2zebu.png</file>
+        <file>images/help_about.png</file>
+        <file>images/application_exit.png</file>
+        <file>images/deskbar.png</file>
+        <file>images/PV_DB_INDEXER.png</file>
+    </qresource>
+</RCC>
