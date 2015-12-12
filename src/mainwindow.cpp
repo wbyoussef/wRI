@@ -174,6 +174,12 @@ void MainWindow::toggle_deskbar()
     this->ui->dockWidget->setVisible (ToggleDeskBarAct->isChecked());
 }
 
+
+void MainWindow::toggle_explorerbar()
+{
+    this->ui->dockWidget_tree->setVisible (ToggleExplorerAct->isChecked());
+}
+
 void MainWindow::zoomin()
 {
 }
@@ -202,6 +208,7 @@ void MainWindow::updateMenus()
     saveAct->setEnabled(true);
     saveAsAct->setEnabled(true);
     pasteAct->setEnabled(true);
+    ToggleExplorerAct->setEnabled(true);
     ToggleDeskBarAct->setEnabled(true);
     zoominAct->setEnabled(true);
     zoomoutAct->setEnabled(true);
@@ -253,7 +260,7 @@ void MainWindow::updateWindowMenu()
     windowMenu->addAction(clearAct);
     windowMenu->addSeparator();
     windowMenu->addAction(ToggleDeskBarAct);
-
+    windowMenu->addAction (ToggleExplorerAct);
 }
 
 
@@ -327,6 +334,12 @@ void MainWindow::createActions()
     ToggleDeskBarAct->setCheckable(true);
     ToggleDeskBarAct->setChecked(true);
     connect(ToggleDeskBarAct, SIGNAL(triggered()), this, SLOT(toggle_deskbar()));
+
+    ToggleExplorerAct = new QAction(QIcon(":/images/cascade.png"), tr("Toggle Project Explorer"), this);
+    ToggleExplorerAct->setStatusTip(tr("Toggle Project Explorer"));
+    ToggleExplorerAct->setCheckable(true);
+    ToggleExplorerAct->setChecked(true);
+    connect(ToggleExplorerAct, SIGNAL(triggered()), this, SLOT(toggle_explorerbar()));
 
 
 
@@ -502,6 +515,7 @@ void MainWindow::createToolBars()
 
     ChildToolBar = addToolBar(tr("View"));
     ChildToolBar->addAction(ToggleDeskBarAct);
+    ChildToolBar->addAction(ToggleExplorerAct);
     ChildToolBar->addAction(zoominAct);
     ChildToolBar->addAction(zoomoutAct);
     ChildToolBar->addAction(clearAct);

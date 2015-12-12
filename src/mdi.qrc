@@ -29,5 +29,6 @@
         <file>images/application_exit.png</file>
         <file>images/deskbar.png</file>
         <file>images/PV_DB_INDEXER.png</file>
+        <file>images/cascade.png</file>
     </qresource>
 </RCC>

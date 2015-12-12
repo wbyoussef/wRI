@@ -94,6 +94,7 @@ private slots:
     void copy();
     void paste();
     void toggle_deskbar();
+    void toggle_explorerbar();
     void zoomin();
     void zoomout();
     void clear();
@@ -157,6 +158,7 @@ private:
     QAction *PVIndexAct;
     QAction *pasteAct;
     QAction *ToggleDeskBarAct;
+    QAction *ToggleExplorerAct;
     QAction *zoominAct;
     QAction *zoomoutAct;
     QAction *clearAct;
