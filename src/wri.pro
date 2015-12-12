@@ -32,7 +32,8 @@ HEADERS = mainwindow.h \
     pv_indexer.h \
     pv_indexer_misc.h \
     wri_desk_settings.h \
-    wri_project.h
+    wri_project.h \
+    writ_project_doc.h
 
 SOURCES = mainwindow.cpp \
     main.cpp \
@@ -48,7 +49,8 @@ SOURCES = mainwindow.cpp \
     pv_indexer.cpp \
     pv_indexer_misc.cpp \
     wri_desk_settings.cpp \
-    wri_project.cpp
+    wri_project.cpp \
+    writ_project_doc.cpp
 
 RESOURCES = mdi.qrc
 FORMS += \
