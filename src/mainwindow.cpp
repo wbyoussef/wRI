@@ -51,8 +51,8 @@
 #include "ui_mainwindow.h"
 #include "wri_desk_settings.h"
 #include "pv_indexer.h"
-
-//// #define FULL_APP
+#include "wri_project.h"
+#define FULL_APP
 
 MainWindow::MainWindow():
         QMainWindow(),
@@ -127,7 +127,9 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::newFile()
 {
-
+    wRI_Project* child = new wRI_Project();
+    mdiArea->addSubWindow(child);
+    child->showMaximized();
 }
 
 void MainWindow::open()
@@ -266,12 +268,12 @@ void MainWindow::updateWindowMenu()
 
 void MainWindow::createActions()
 {
-    newAct = new QAction(QIcon(":/images/new.png"), tr("&New"), this);
+    newAct = new QAction(QIcon(":/images/new.png"), tr("&New Project"), this);
     newAct->setShortcuts(QKeySequence::New);
     newAct->setStatusTip(tr("Create a new file"));
     connect(newAct, SIGNAL(triggered()), this, SLOT(newFile()));
 
-    openAct = new QAction(QIcon(":/images/open.png"), tr("&Open..."), this);
+    openAct = new QAction(QIcon(":/images/open.png"), tr("&Open Project..."), this);
     openAct->setShortcuts(QKeySequence::Open);
     openAct->setStatusTip(tr("Open an existing file"));
     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
@@ -281,7 +283,7 @@ void MainWindow::createActions()
     saveAct->setStatusTip(tr("Save the document to disk"));
     connect(saveAct, SIGNAL(triggered()), this, SLOT(save()));
 
-    saveAsAct = new QAction(tr("Save &As..."), this);
+    saveAsAct = new QAction(QIcon(":/images/save.png"),tr("Save &As..."), this);
     saveAsAct->setShortcuts(QKeySequence::SaveAs);
     saveAsAct->setStatusTip(tr("Save the document under a new name"));
     connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
@@ -445,8 +447,6 @@ void MainWindow::createActions()
 void MainWindow::createMenus()
 {
     fileMenu = menuBar()->addMenu(tr("&File"));
-    fileMenu->addSeparator();
-    fileMenu->addAction(exitAct);
 
 #ifdef FULL_APP
     fileMenu->addAction(newAct);
@@ -463,6 +463,8 @@ void MainWindow::createMenus()
     QAction *action = fileMenu->addAction(tr("Switch layout direction"));
     connect(action, SIGNAL(triggered()), this, SLOT(switchLayoutDirection()));
 #endif
+    fileMenu->addSeparator();
+    fileMenu->addAction(exitAct);
 
     editMenu = menuBar()->addMenu(tr("&Tools"));
 #ifdef FULL_APP
