@@ -5,3 +5,9 @@ writ_project_doc::writ_project_doc()
 
 }
 
+
+
+cRtlGroup::cRtlGroup()
+{
+
+}
