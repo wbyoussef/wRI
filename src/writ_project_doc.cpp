@@ -22,12 +22,12 @@ void writ_project_doc::setSDescription(const QString &value)
 {
     sDescription = value;
 }
-cRtlGroup writ_project_doc::getRtlGroup() const
+writ_project_doc_RtlGroup writ_project_doc::getRtlGroup() const
 {
     return RtlGroup;
 }
 
-void writ_project_doc::setRtlGroup(const cRtlGroup &value)
+void writ_project_doc::setRtlGroup(const writ_project_doc_RtlGroup &value)
 {
     RtlGroup = value;
 }
@@ -35,19 +35,4 @@ void writ_project_doc::setRtlGroup(const cRtlGroup &value)
 
 
 
-
-
-cRtlGroup::cRtlGroup()
-{
-
-}
-QString cRtlGroup::getSGroupName() const
-{
-    return sGroupName;
-}
-
-void cRtlGroup::setSGroupName(const QString &value)
-{
-    sGroupName = value;
-}
 

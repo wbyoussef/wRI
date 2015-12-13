@@ -2,17 +2,11 @@
 #define WRIT_PROJECT_DOC_H
 
 #include <QString>
+#include <writ_project_doc_info.h>
 
-
-class cRtlGroup
+class writ_project_doc_RtlGroup
 {
-public :
-    cRtlGroup();
-    QString getSGroupName() const;
-    void setSGroupName(const QString &value);
 
-private :
-    QString sGroupName;
 };
 
 class writ_project_doc
@@ -26,13 +20,13 @@ public:
     QString getSDescription() const;
     void setSDescription(const QString &value);
 
-    cRtlGroup getRtlGroup() const;
-    void setRtlGroup(const cRtlGroup &value);
+    writ_project_doc_RtlGroup getRtlGroup() const;
+    void setRtlGroup(const writ_project_doc_RtlGroup &value);
 
 private :
     QString    sProjectName;
     QString    sDescription;
-    cRtlGroup  RtlGroup ;
+    writ_project_doc_RtlGroup  RtlGroup ;
 };
 
 #endif // WRIT_PROJECT_DOC_H
