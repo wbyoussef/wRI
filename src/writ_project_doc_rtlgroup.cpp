@@ -16,3 +16,13 @@ void writ_project_doc_RtlGroup::setSGroupName(const QString &value)
     sGroupName = value;
 }
 
+
+QString writ_project_doc_RtlGroup_file::getFilename() const
+{
+    return filename;
+}
+
+void writ_project_doc_RtlGroup_file::setFilename(const QString &value)
+{
+    filename = value;
+}

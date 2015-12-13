@@ -2,12 +2,10 @@
 #define WRIT_PROJECT_DOC_H
 
 #include <QString>
-#include <writ_project_doc_info.h>
-
-class writ_project_doc_RtlGroup
-{
-
-};
+#include <QVector>
+#include "writ_project_doc_info.h"
+#include "writ_project_doc_rtlgroup.h"
+//#include "writ_project_doc_RtlGroup.h"
 
 class writ_project_doc
 {
@@ -20,13 +18,13 @@ public:
     QString getSDescription() const;
     void setSDescription(const QString &value);
 
-    writ_project_doc_RtlGroup getRtlGroup() const;
-    void setRtlGroup(const writ_project_doc_RtlGroup &value);
-
 private :
+    //!Project name
     QString    sProjectName;
+    //! Project description
     QString    sDescription;
-    writ_project_doc_RtlGroup  RtlGroup ;
+    //! Rtl groups
+    QVector <writ_project_doc_RtlGroup>  RtlGroups ;
 };
 
 #endif // WRIT_PROJECT_DOC_H

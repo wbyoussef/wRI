@@ -3,6 +3,19 @@
 
 #include <QString>
 
+class writ_project_doc_RtlGroup_file
+{
+public :
+    writ_project_doc_RtlGroup_file();
+
+    QString getFilename() const;
+    void setFilename(const QString &value);
+
+private :
+    QString filename;
+
+};
+
 class writ_project_doc_RtlGroup
 {
 public :

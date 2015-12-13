@@ -22,17 +22,6 @@ void writ_project_doc::setSDescription(const QString &value)
 {
     sDescription = value;
 }
-writ_project_doc_RtlGroup writ_project_doc::getRtlGroup() const
-{
-    return RtlGroup;
-}
-
-void writ_project_doc::setRtlGroup(const writ_project_doc_RtlGroup &value)
-{
-    RtlGroup = value;
-}
-
-
 
 
 
