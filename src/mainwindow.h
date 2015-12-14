@@ -99,8 +99,9 @@ private slots:
     void zoomout();
     void clear();
     void wri_desk_settings();
+#ifndef NO_LUCENE
     void PVIndexer();
-
+#endif
     void about();
     void updateMenus();
     void updateWindowMenu();

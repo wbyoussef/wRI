@@ -50,7 +50,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "wri_desk_settings.h"
+#ifndef NO_LUCENE
 #include "pv_indexer.h"
+#endif
 #include "wri_project.h"
 #define FULL_APP
 
@@ -631,7 +633,7 @@ void MainWindow::wri_desk_settings()
 }
 
 
-
+#ifndef NO_LUCENE
 void MainWindow::PVIndexer()
 {
 
@@ -640,7 +642,7 @@ void MainWindow::PVIndexer()
     Indexer->showMaximized();
 
 }
-
+#endif
 
 
 
