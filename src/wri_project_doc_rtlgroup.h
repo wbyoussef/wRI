@@ -1,30 +1,38 @@
-#ifndef WRIT_PROJECT_DOC_RTLGROUP_H
-#define WRIT_PROJECT_DOC_RTLGROUP_H
+#ifndef wri_project_DOC_RTLGROUP_H
+#define wri_project_DOC_RTLGROUP_H
 
 #include <QString>
+#include <QVector>
 
-class writ_project_doc_RtlGroup_file
+#include "wri_project_doc.h"
+class wri_project_doc;
+
+class wri_project_doc_RtlGroup_file
 {
 public :
-    writ_project_doc_RtlGroup_file();
-
+    wri_project_doc_RtlGroup_file();
     QString getFilename() const;
     void setFilename(const QString &value);
 
+    wri_project_doc::file_type getFile_type() const;
+    void setFile_type(const wri_project_doc::file_type &value);
+
 private :
     QString filename;
+    wri_project_doc::file_type file_type;
 
 };
 
-class writ_project_doc_RtlGroup
+class wri_project_doc_RtlGroup
 {
 public :
-    writ_project_doc_RtlGroup();
+    wri_project_doc_RtlGroup();
     QString getSGroupName() const;
     void setSGroupName(const QString &value);
 
 private :
     QString sGroupName;
+    QVector <wri_project_doc_RtlGroup_file*> files;
 };
 
-#endif // WRIT_PROJECT_DOC_RTLGROUP_H
+#endif // wri_project_DOC_RTLGROUP_H

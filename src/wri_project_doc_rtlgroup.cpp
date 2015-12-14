@@ -1,28 +1,38 @@
-#include "writ_project_doc_rtlgroup.h"
+#include "wri_project_doc_rtlgroup.h"
 
-writ_project_doc_RtlGroup::writ_project_doc_RtlGroup()
+wri_project_doc_RtlGroup::wri_project_doc_RtlGroup()
 {
 
 }
 
 
-QString writ_project_doc_RtlGroup::getSGroupName() const
+QString wri_project_doc_RtlGroup::getSGroupName() const
 {
     return sGroupName;
 }
 
-void writ_project_doc_RtlGroup::setSGroupName(const QString &value)
+void wri_project_doc_RtlGroup::setSGroupName(const QString &value)
 {
     sGroupName = value;
 }
 
 
-QString writ_project_doc_RtlGroup_file::getFilename() const
+QString wri_project_doc_RtlGroup_file::getFilename() const
 {
     return filename;
 }
 
-void writ_project_doc_RtlGroup_file::setFilename(const QString &value)
+void wri_project_doc_RtlGroup_file::setFilename(const QString &value)
 {
     filename = value;
 }
+wri_project_doc::file_type wri_project_doc_RtlGroup_file::getFile_type() const
+{
+    return file_type;
+}
+
+void wri_project_doc_RtlGroup_file::setFile_type(const wri_project_doc::file_type &value)
+{
+    file_type = value;
+}
+

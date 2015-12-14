@@ -1,11 +1,11 @@
-#ifndef WRIT_PROJECT_DOC_INFO_H
-#define WRIT_PROJECT_DOC_INFO_H
+#ifndef wri_project_DOC_INFO_H
+#define wri_project_DOC_INFO_H
 
 
-class writ_project_doc_info
+class wri_project_doc_info
 {
 public:
-    writ_project_doc_info();
+    wri_project_doc_info();
 };
 
-#endif // WRIT_PROJECT_DOC_INFO_H
+#endif // wri_project_DOC_INFO_H
