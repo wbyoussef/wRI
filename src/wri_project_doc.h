@@ -11,7 +11,7 @@ class wri_project_doc_RtlGroup;
 class wri_project_doc
 {
 public:
-    enum file_type  {FILE_VLOG,FILE_SVLOG, FILE_VHDL,FILE_SYSTEMC,FILE_XML,FILE_TCL};
+//    enum file_type  {FILE_VLOG,FILE_SVLOG, FILE_VHDL,FILE_SYSTEMC,FILE_XML,FILE_TCL};
 
     wri_project_doc();
 

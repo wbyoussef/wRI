@@ -26,12 +26,12 @@ void wri_project_doc_RtlGroup_file::setFilename(const QString &value)
 {
     filename = value;
 }
-wri_project_doc::file_type wri_project_doc_RtlGroup_file::getFile_type() const
+WRI_PROJECT::file_type wri_project_doc_RtlGroup_file::getFile_type() const
 {
     return file_type;
 }
 
-void wri_project_doc_RtlGroup_file::setFile_type(const wri_project_doc::file_type &value)
+void wri_project_doc_RtlGroup_file::setFile_type(const WRI_PROJECT::file_type &value)
 {
     file_type = value;
 }

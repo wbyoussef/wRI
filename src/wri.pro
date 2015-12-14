@@ -34,7 +34,8 @@ HEADERS = mainwindow.h \
     wri_project.h \
     wri_project_doc.h \
     wri_project_doc_info.h \
-    wri_project_doc_rtlgroup.h
+    wri_project_doc_rtlgroup.h \
+    wri_project_doc_includes.h
 
 unix :HEADERS +=     pv_indexer.h \
    pv_indexer_misc.h \
