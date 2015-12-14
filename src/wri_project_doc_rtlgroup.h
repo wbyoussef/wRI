@@ -5,6 +5,8 @@
 #include <QVector>
 
 #include "wri_project_doc.h"
+#include "wri_project_doc_includes.h"
+
 class wri_project_doc;
 
 class wri_project_doc_RtlGroup_file
@@ -14,12 +16,12 @@ public :
     QString getFilename() const;
     void setFilename(const QString &value);
 
-    wri_project_doc::file_type getFile_type() const;
-    void setFile_type(const wri_project_doc::file_type &value);
+    WRI_PROJECT::file_type getFile_type() const;
+    void setFile_type(const WRI_PROJECT::file_type &value);
 
 private :
     QString filename;
-    wri_project_doc::file_type file_type;
+    WRI_PROJECT::file_type file_type;
 
 };
 
