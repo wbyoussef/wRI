@@ -17,3 +17,13 @@ wRI_Project::~wRI_Project()
 {
     delete ui;
 }
+
+bool wRI_Project::load_file(QString filename)
+{
+
+}
+
+bool wRI_Project::save_file(QString filename)
+{
+
+}
