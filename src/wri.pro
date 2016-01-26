@@ -7,13 +7,7 @@ CONFIG      +=  qscintilla2
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets gui
-win32:DEFINES += NO_EXCEL
-win32:DEFINES += NO_LUCENE
 
-# QMAKE_LFLAGS += -static
-#QMAKE_CXXFLAGS += -stati
-# QMAKE_LFLAGS += -static-libstdc++ $(QTDIR)/lib/libclucene.a
-unix:LIBS += -lclucene
 
 
 
@@ -37,8 +31,6 @@ HEADERS = mainwindow.h \
     wri_project_doc_rtlgroup.h \
     wri_project_doc_includes.h
 
-unix :HEADERS +=     pv_indexer.h \
-   pv_indexer_misc.h \
 
 SOURCES = mainwindow.cpp \
     main.cpp \
@@ -57,8 +49,6 @@ SOURCES = mainwindow.cpp \
     wri_project_doc_info.cpp \
     wri_project_doc_rtlgroup.cpp
 
-unix:SOURCES+=     pv_indexer.cpp \
-    pv_indexer_misc.cpp \
 
 RESOURCES = mdi.qrc
 FORMS += \
@@ -66,11 +56,39 @@ FORMS += \
     wri_desk_settings.ui \
     wri_project.ui
 
-unix:FORMS+= pv_indexer.ui
 
 CONFIG += static
 ICON = ressources/qa_desk.png
 
+######################################################
+# OS dependeant stuff
+######################################################
+
+### UNIX
+
+# unix :HEADERS +=     pv_indexer.h \
+#    pv_indexer_misc.h \
+# unix:FORMS+= pv_indexer.ui
+# unix:SOURCES+=     pv_indexer.cpp \
+#     pv_indexer_misc.cpp \
+# unix:LIBS += -lclucene
+
+unix:DEFINES += NO_EXCEL
+unix:DEFINES += NO_LUCENE
+unix:SOURCES -=     xlsx/Xlsx/XlsxHeaders.cpp \
+    xlsx/Xlsx/Worksheet.cpp \
+    xlsx/Xlsx/Workbook.cpp \
+    xlsx/Xlsx/Chartsheet.cpp \
+    xlsx/Zip/zip.cpp \
+    pv_indexer.cpp \
+    pv_indexer_misc.cpp \
+
+unix:FORMS -=     pv_indexer.ui
+
+
+### Windows
+win32:DEFINES += NO_EXCEL
+win32:DEFINES += NO_LUCENE
 win32:SOURCES -=     xlsx/Xlsx/XlsxHeaders.cpp \
     xlsx/Xlsx/Worksheet.cpp \
     xlsx/Xlsx/Workbook.cpp \
@@ -80,5 +98,3 @@ win32:SOURCES -=     xlsx/Xlsx/XlsxHeaders.cpp \
     pv_indexer_misc.cpp \
 
 win32:FORMS -=     pv_indexer.ui
-
-#
