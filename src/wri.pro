@@ -74,7 +74,6 @@ ICON = ressources/qa_desk.png
 # unix:LIBS += -lclucene
 
 unix:DEFINES += NO_EXCEL
-unix:DEFINES += NO_LUCENE
 unix:SOURCES -=     xlsx/Xlsx/XlsxHeaders.cpp \
     xlsx/Xlsx/Worksheet.cpp \
     xlsx/Xlsx/Workbook.cpp \
@@ -88,7 +87,6 @@ unix:FORMS -=     pv_indexer.ui
 
 ### Windows
 win32:DEFINES += NO_EXCEL
-win32:DEFINES += NO_LUCENE
 win32:SOURCES -=     xlsx/Xlsx/XlsxHeaders.cpp \
     xlsx/Xlsx/Worksheet.cpp \
     xlsx/Xlsx/Workbook.cpp \

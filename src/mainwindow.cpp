@@ -50,11 +50,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "wri_desk_settings.h"
-#ifndef NO_LUCENE
-#include "pv_indexer.h"
-#endif
 #include "wri_project.h"
-#define FULL_APP
+
 
 MainWindow::MainWindow():
         QMainWindow(),
@@ -229,7 +226,6 @@ void MainWindow::updateMenus()
                         /// activeMdiChild()->textCursor().hasSelection());
     cutAct->setEnabled(hasSelection);
     SettingsAct->setEnabled(true);
-    PVIndexAct->setEnabled(true);
 
     copyAct->setEnabled(hasSelection);
 
@@ -307,10 +303,6 @@ void MainWindow::createActions()
     SettingsAct->setStatusTip(tr("QA Desk settings"));
     connect(SettingsAct, SIGNAL(triggered()), this, SLOT(wri_desk_settings()));
 
-
-    PVIndexAct = new QAction(QIcon(":/images/PV_DB_INDEXER.png"), tr("&PV Database indexer"), this);
-    PVIndexAct->setStatusTip(tr("PV Database indexer"));
-    connect(PVIndexAct, SIGNAL(triggered()), this, SLOT(PVIndexer()));
 
 
     copyAct = new QAction(QIcon(":/images/copy.png"), tr("&Copy"), this);
@@ -450,7 +442,6 @@ void MainWindow::createMenus()
 {
     fileMenu = menuBar()->addMenu(tr("&File"));
 
-#ifdef FULL_APP
     fileMenu->addAction(newAct);
     fileMenu->addAction(openAct);
     fileMenu->addAction(saveAct);
@@ -464,17 +455,16 @@ void MainWindow::createMenus()
 
     QAction *action = fileMenu->addAction(tr("Switch layout direction"));
     connect(action, SIGNAL(triggered()), this, SLOT(switchLayoutDirection()));
-#endif
+
     fileMenu->addSeparator();
     fileMenu->addAction(exitAct);
 
     editMenu = menuBar()->addMenu(tr("&Tools"));
-#ifdef FULL_APP
+
     editMenu->addAction(cutAct);
     editMenu->addAction(copyAct);
     editMenu->addAction(pasteAct);
-#endif
-    editMenu->addAction(PVIndexAct);
+
     editMenu->addAction(SettingsAct);
 
     windowMenu = menuBar()->addMenu(tr("&Window"));
@@ -502,9 +492,8 @@ void MainWindow::createMenus()
 void MainWindow::createToolBars()
 {
     toolsToolbar = addToolBar(tr("Tools"));
-    toolsToolbar->addAction(PVIndexAct);
 
-#ifdef FULL_APP
+
     fileToolBar = addToolBar(tr("File"));
     fileToolBar->addAction(newAct);
     fileToolBar->addAction(openAct);
@@ -515,7 +504,7 @@ void MainWindow::createToolBars()
     editToolBar->addAction(copyAct);
     editToolBar->addAction(pasteAct);
     toolsToolbar->addAction(SettingsAct);
-#endif
+
 
     ChildToolBar = addToolBar(tr("View"));
     ChildToolBar->addAction(ToggleDeskBarAct);
@@ -633,16 +622,6 @@ void MainWindow::wri_desk_settings()
 }
 
 
-#ifndef NO_LUCENE
-void MainWindow::PVIndexer()
-{
-
-    PV_Indexer* Indexer = new PV_Indexer(this, this);
-    mdiArea->addSubWindow(Indexer);
-    Indexer->showMaximized();
-
-}
-#endif
 
 
 

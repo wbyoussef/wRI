@@ -7,6 +7,8 @@ namespace Ui {
 class wRI_Project;
 }
 
+class wri_project_doc;
+
 class wRI_Project : public QDialog
 {
     Q_OBJECT
@@ -31,6 +33,9 @@ public:
 
 private:
     Ui::wRI_Project *ui;
+    //! Document
+    wri_project_doc* Document;
+
 };
 
 #endif // WRI_PROJECT_H

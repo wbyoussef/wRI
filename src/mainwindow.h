@@ -99,9 +99,6 @@ private slots:
     void zoomout();
     void clear();
     void wri_desk_settings();
-#ifndef NO_LUCENE
-    void PVIndexer();
-#endif
     void about();
     void updateMenus();
     void updateWindowMenu();
@@ -156,7 +153,6 @@ private:
     QAction *copyAct;
     QAction *SettingsAct;
     QAction *CampainAnalysisAct;
-    QAction *PVIndexAct;
     QAction *pasteAct;
     QAction *ToggleDeskBarAct;
     QAction *ToggleExplorerAct;
