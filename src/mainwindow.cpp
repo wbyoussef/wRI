@@ -141,7 +141,7 @@ void MainWindow::open()
 
 void MainWindow::open_file(QString filename)
 {
-        QSettings settings("EVE", "QA_DESK");
+        QSettings settings("wDev", "wRTLDesk");
         QStringList files = settings.value("recentFileList").toStringList();
         files.removeAll(filename);
         files.prepend(filename);
@@ -205,7 +205,6 @@ void MainWindow::about()
 
 void MainWindow::updateMenus()
 {
-    bool has_qa_campaign_child = true;
     saveAct->setEnabled(true);
     saveAsAct->setEnabled(true);
     pasteAct->setEnabled(true);
@@ -214,13 +213,13 @@ void MainWindow::updateMenus()
     zoominAct->setEnabled(true);
     zoomoutAct->setEnabled(true);
     clearAct->setEnabled(true);
-    closeAct->setEnabled(true|has_qa_campaign_child);
-    closeAllAct->setEnabled(true|has_qa_campaign_child);
-    tileAct->setEnabled(true|has_qa_campaign_child);
-    cascadeAct->setEnabled(true|has_qa_campaign_child);
-    nextAct->setEnabled(true|has_qa_campaign_child);
-    previousAct->setEnabled(true|has_qa_campaign_child);
-    separatorAct->setVisible(true|has_qa_campaign_child);
+    closeAct->setEnabled(true);
+    closeAllAct->setEnabled(true);
+    tileAct->setEnabled(true);
+    cascadeAct->setEnabled(true);
+    nextAct->setEnabled(true);
+    previousAct->setEnabled(true);
+    separatorAct->setVisible(true);
 
     bool hasSelection ; /// = (activeMdiChild() &&
                         /// activeMdiChild()->textCursor().hasSelection());
@@ -453,10 +452,6 @@ void MainWindow::createMenus()
 
     fileMenu->addSeparator();
 
-    QAction *action = fileMenu->addAction(tr("Switch layout direction"));
-    connect(action, SIGNAL(triggered()), this, SLOT(switchLayoutDirection()));
-
-    fileMenu->addSeparator();
     fileMenu->addAction(exitAct);
 
     editMenu = menuBar()->addMenu(tr("&Tools"));
@@ -639,7 +634,7 @@ void MainWindow::openRecentFile()
 
 void MainWindow::updateRecentFileActions()
 {
-    QSettings settings("EVE", "QA_DESK");
+    QSettings settings("wDev", "wRTLDesk");
     QStringList files = settings.value("recentFileList").toStringList();
 
     int numRecentFiles = qMin(files.size(), (int)MaxRecentFiles);

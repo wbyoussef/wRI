@@ -74,7 +74,7 @@ bool fill_sheet (CWorkbook &book, QTableWidget *table, QString sheetname)
 
 bool send_by_email (QString body ,QString subject,QString fileName)
 {
-    QString qa_user_name = run_cmd("whoami");
+    QString UserName = run_cmd("whoami");
 
     // send by email
     QString command = "echo \" ";
@@ -83,7 +83,7 @@ bool send_by_email (QString body ,QString subject,QString fileName)
     command += subject;
     command += "\" -a ";
     command += fileName;
-    command += " " +  qa_user_name + "@synopsys.com";
+    command += " " +  UserName + "@synopsys.com";
     printf ("%s \n",command.toStdString().c_str());
     system (command.toStdString().c_str());
 }

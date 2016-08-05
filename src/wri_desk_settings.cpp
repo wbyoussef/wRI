@@ -9,7 +9,7 @@ wRI_Desk_settings::wRI_Desk_settings(QWidget *parent) :
     ui(new Ui::wRI_Desk_settings)
 {
     ui->setupUi(this);
-    QSettings settings("EVE", "QA_DESK");
+    QSettings settings("wDev", "wRTLDesk");
     app_settigns.p4port_pv = settings.value("app_settigns.p4port_pv").value<QString>();
     app_settigns.p4port_dev = settings.value("app_settigns.p4port_dev").value<QString>();
     app_settigns.default_path = settings.value("app_settigns.default_path").value<QString>();
@@ -100,7 +100,7 @@ void wRI_Desk_settings::on_toolButton_4_clicked()
 
 
 
-    QSettings settings("EVE", "QA_DESK");
+    QSettings settings("wDev", "wRTLDesk");
     // settings.setValue("pos", pos());
     settings.setValue("app_settigns.p4port_pv", app_settigns.p4port_pv);
     settings.setValue("app_settigns.p4port_dev", app_settigns.p4port_dev );
