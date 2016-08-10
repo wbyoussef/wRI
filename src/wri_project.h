@@ -34,7 +34,7 @@ public:
 private:
     Ui::wRI_Project *ui;
     //! Document
-    wri_project_doc* Document;
+    wri_project_doc* _Document;
 
 };
 

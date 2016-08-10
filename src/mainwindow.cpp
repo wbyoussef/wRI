@@ -81,7 +81,7 @@ MainWindow::MainWindow():
 
     readSettings();
 
-    setWindowTitle(tr("QA Desk"));
+    setWindowTitle(tr("wRI"));
     setUnifiedTitleAndToolBarOnMac(true);
 
     //! configure Docks
@@ -299,7 +299,7 @@ void MainWindow::createActions()
     connect(cutAct, SIGNAL(triggered()), this, SLOT(cut()));
 
     SettingsAct = new QAction(QIcon(":/images/settings1.png"), tr("&Settings"), this);
-    SettingsAct->setStatusTip(tr("QA Desk settings"));
+    SettingsAct->setStatusTip(tr("wRI settings"));
     connect(SettingsAct, SIGNAL(triggered()), this, SLOT(wri_desk_settings()));
 
 
