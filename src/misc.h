@@ -2,6 +2,7 @@
 #define MISC_H
 #include <QString>
 #include <QTableWidget>
+#include <QSettings>
 
 #include "xlsx/Xlsx/Workbook.h"
 #include "xlsx/Xlsx/Worksheet.h"
@@ -27,5 +28,9 @@ bool send_by_email (QString body ,QString subject,QString fileName);
 QString run_cmd(QString command) ;
 
 bool QStringToFile (QString FileName, QString myString);
+
+
+bool writeXmlFile(QIODevice &device, const QSettings::SettingsMap &map) ;
+bool readXmlFile(QIODevice &device, QSettings::SettingsMap &map) ;
 
 #endif // MISC_H
