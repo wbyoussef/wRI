@@ -16,6 +16,7 @@ public:
 
     virtual bool load_file (QString filename) = 0;
     virtual bool save_file (QString filename) = 0;
+    virtual bool save_file () = 0;
 
 private :
     MDI_TYPE _Type;

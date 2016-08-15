@@ -32,12 +32,16 @@ public:
      *     @return True if file loaded successfully
     */
     bool save_file (QString filename);
+    bool save_file ();
+
+    QString FileName() const;
+    void setFileName(const QString &FileName);
 
 private:
     Ui::wRI_Project *ui;
     //! Document
     wri_project_doc* _Document;
-
+    QString _FileName;
 };
 
 #endif // WRI_PROJECT_H

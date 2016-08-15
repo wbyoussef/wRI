@@ -761,7 +761,7 @@ void MainWindow::on_lineEdit_shell_cmd_returnPressed()
     this->ui->lineEdit_shell_cmd->clear();
 }
 
-wRI_MdiChild *MainWindow::activeMdiChild()
+wRI_MdiChild* MainWindow::activeMdiChild()
 {
     if (QMdiSubWindow *activeSubWindow = mdiArea->activeSubWindow())
         return qobject_cast<wRI_MdiChild *>(activeSubWindow->widget());

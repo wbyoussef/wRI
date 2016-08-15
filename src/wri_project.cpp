@@ -20,10 +20,30 @@ wRI_Project::~wRI_Project()
 
 bool wRI_Project::load_file(QString filename)
 {
-
+    this->setFileName(filename);
 }
 
 bool wRI_Project::save_file(QString filename)
 {
     exit (0);
+}
+bool wRI_Project::save_file()
+{
+    if (this->FileName().isEmpty()) {
+        //! ask for a file location
+
+
+    } else {
+        this->save_file(this->FileName());
+    }
+}
+
+QString wRI_Project::FileName() const
+{
+    return _FileName;
+}
+
+void wRI_Project::setFileName(const QString &FileName)
+{
+    _FileName = FileName;
 }
