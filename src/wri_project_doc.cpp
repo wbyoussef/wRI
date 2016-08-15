@@ -12,7 +12,9 @@ bool wri_project_doc::open(QString filename)
 
 bool wri_project_doc::save(QString filename)
 {
-
+    //! save project name
+    //! save rtl groups
+    //! save project info
 }
 
 QString wri_project_doc::getSProjectName() const

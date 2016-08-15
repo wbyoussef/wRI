@@ -141,6 +141,14 @@ void MainWindow::open()
 
 void MainWindow::open_file(QString filename)
 {
+
+    //! Open file
+    wRI_Project* child = new wRI_Project();
+    child->load_file(filename);
+    mdiArea->addSubWindow(child);
+    child->showMaximized();
+
+
         QSettings settings("wDev", "wRTLDesk");
         QStringList files = settings.value("recentFileList").toStringList();
         files.removeAll(filename);

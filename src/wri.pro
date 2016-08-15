@@ -29,7 +29,8 @@ HEADERS = mainwindow.h \
     wri_project_doc.h \
     wri_project_doc_info.h \
     wri_project_doc_rtlgroup.h \
-    wri_project_doc_includes.h
+    wri_project_doc_includes.h \
+    wri_mdichild.h
 
 
 SOURCES = mainwindow.cpp \
@@ -47,7 +48,8 @@ SOURCES = mainwindow.cpp \
     wri_project.cpp \
     wri_project_doc.cpp \
     wri_project_doc_info.cpp \
-    wri_project_doc_rtlgroup.cpp
+    wri_project_doc_rtlgroup.cpp \
+    wri_mdichild.cpp
 
 
 RESOURCES = mdi.qrc

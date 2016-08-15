@@ -3,13 +3,15 @@
 
 #include <QDialog>
 
+#include "wri_mdichild.h"
+
 namespace Ui {
 class wRI_Project;
 }
 
 class wri_project_doc;
 
-class wRI_Project : public QDialog
+class wRI_Project : public wRI_MdiChild
 {
     Q_OBJECT
 

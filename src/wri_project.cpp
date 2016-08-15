@@ -2,7 +2,7 @@
 #include "ui_wri_project.h"
 
 wRI_Project::wRI_Project(QWidget *parent) :
-    QDialog(parent),
+    wRI_MdiChild(parent),
     ui(new Ui::wRI_Project)
 {
     ui->setupUi(this);

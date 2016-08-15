@@ -7,6 +7,7 @@
 // #include "wri_project_doc_rtlgroup.h"
 
 class wri_project_doc_RtlGroup;
+class wri_project_doc_info;
 
 class wri_project_doc
 {
@@ -44,6 +45,11 @@ private :
     //! Rtl groups
     QVector <wri_project_doc_RtlGroup*>  RtlGroups ;
     bool Changed;
+
+    //! Project infos :
+    wri_project_doc_info* Info;
+
+
 };
 
 #endif // wri_project_DOC_H
