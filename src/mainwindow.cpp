@@ -161,6 +161,8 @@ void MainWindow::open_file(QString filename)
 }
 void MainWindow::save()
 {
+    wRI_MdiChild* Child = this->activeMdiChild();
+    Child->save_file();
 }
 
 void MainWindow::saveAs()
@@ -757,4 +759,11 @@ void MainWindow::on_lineEdit_shell_cmd_returnPressed()
     this->run_fast_cmd(this->ui->lineEdit_shell_cmd->text());
 
     this->ui->lineEdit_shell_cmd->clear();
+}
+
+wRI_MdiChild *MainWindow::activeMdiChild()
+{
+    if (QMdiSubWindow *activeSubWindow = mdiArea->activeSubWindow())
+        return qobject_cast<wRI_MdiChild *>(activeSubWindow->widget());
+    return 0;
 }

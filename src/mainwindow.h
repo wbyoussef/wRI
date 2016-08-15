@@ -54,6 +54,7 @@ class QMdiSubWindow;
 class QSignalMapper;
 class QSettings;
 class wRI_Desk_settings;
+class wRI_MdiChild;
 
 QT_END_NAMESPACE
 
@@ -120,6 +121,9 @@ private slots:
     void on_lineEdit_editingFinished();
 
     void on_lineEdit_shell_cmd_returnPressed();
+
+
+    wRI_MdiChild *activeMdiChild();
 
 private:
     void createActions();
